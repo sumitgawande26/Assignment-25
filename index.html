@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: rgb(61,58,153);
+background: linear-gradient(288deg, rgba(61,58,153,1) 0%, rgba(79,218,167,1) 25%, rgba(9,75,121,1) 42%, rgba(63,120,156,1) 77%, rgba(141,0,255,1) 92%);
+        height: 100vh
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        color: white;
+    }
+
+    .input {
+        width: 90%;
+        font-size: 20px;
+        background-color: rgb(252, 252, 252);
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+        margin: 15px auto;
+        padding: 10px;
+    }
+
+    .main {
+        padding: 10px;
+        background-color: white;
+        width: 40%;
+        border-radius: 10px;
+        margin: 0px auto;
+    }
+
+    .answer {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .btn-calculator {
+        width: 140px;
+        display: block;
+        margin: 10px auto;
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        border-radius: 30px;
+        padding: 5px 10px;
+    }
+</style>
+<body>
+    <h1> Awesome Calculator😍 </h1>
+    <div class="main">
+        <input class="input" type="text " placeholder="Enter Radius" id="num1">
+        <p id="answer" class="answer"> </p>
+        <button class="btn-calculator" type="button" onclick="calculate()">Calculate </button>
+        <button class="btn-calculator" type="button" onclick="reset()">Reset</button>
+    </div>
+    <script>
+        const value1 = document.getElementById("num1");
+        const answerText = document.getElementById("answer");
+
+        function calculate() {
+            const radius = parseInt(value1.value);
+            const area = 3.14 * radius;
+            answerText.innerHTML = `Area is : ${area} m^2`;
+        }
+        function reset() {
+            value1.value = "";
+            answerText.innerHTML = " Area is : ";
+        }
+    </script>
+</body>
+</html>
